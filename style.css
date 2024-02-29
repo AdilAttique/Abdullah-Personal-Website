@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
+* {
+  margin: 0;
+}
+.hero {
+  display: flex;
+  background-color: #C1CEFE;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  justify-content: center ;
+  align-items: center;
+}
+
+.hero__title {
+  color: #023e8a;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  z-index: 1;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #003298;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+          animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #0051f4;
+}
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+@-webkit-keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+#generate {
+  align-self: center;
+  margin-bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
+}
+
+
+
+#generate {
+  padding: 10px 20px;  
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;  
+  color: var(--text-color);
+  background-color: #1d3557;
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 10px; 
+  z-index: 0;  
+  overflow: hidden;   
+}
+
+#generate:focus {
+  outline-color: transparent;
+  box-shadow: var(--btn-color) 2px 2px 22px;
+}
+
+.right::after, #generate::after {
+  content: var(--content);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events:none;
+}
+
+#generate::after{
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+} 
+
+
+/* bubbles */
+#generate::before {
+  content: '';
+  pointer-events: none;
+  opacity: .6;
+  background:
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
+
+
+.excuse {
+  position: absolute;
+  color: #141218;
+  height: 10%;
+  width: 60%;
+
+  border-radius: 10px;
+  align-self: center;
+  z-index: 20;
+  top: 60%;
+  right: 50%;
+  left: 20%;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  align-items: center;
+}
+
+
+#dark-mode {
+  align-self: flex-start;
+  margin-top: 0.5%;
+  height: 35px;
+  position: absolute;
+  right: 5px;
+  background-color: #1d3557;
+  color: wheat;
+  border-radius: 30px;
+}
+
+#dark-mode :hover {
+  cursor: pointer;
+}
+
+.dark-mode {
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+}
+
+i {
+  font-size: 30px;
+}
